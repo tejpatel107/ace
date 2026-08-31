@@ -1,0 +1,55 @@
+<!doctype html>
+<head>
+  <title>To-Do Application</title>
+  <link href="index.css" rel="stylesheet"></link>
+  <script type="module" defer src="index.js"></script>
+</head>
+<body>
+
+  <div id="workspace" class="workspace">
+    <div id="editing-card" class="editing-card hidden">
+      <h6>List Hierarchy</h6>
+      <div id="list-heirarchy-content" class="list-heirarchy-content">
+      </div>
+
+      <!-- Parent hierarchy -->
+        <div id="parent-hierarchy" class="parent-hierarchy">
+
+          <!-- <select class="parent-select" data-level="0">
+            <option value="">a</option>
+          </select>
+
+          <span class="hierarchy-arrow">→</span>
+
+          <select class="parent-select" data-level="1">
+            <option value="">b</option>
+          </select>
+
+          <span class="hierarchy-arrow">→</span>
+
+          <select class="parent-select" data-level="2">
+            <option value="">c</option>
+          </select> -->
+
+        </div>
+    </div>
+    <div class="todo-content"> 
+
+      <header id="header" class="header">To-Do list</header>
+      <main>
+          
+        <div 
+          id="new-todo-input-container" 
+          class="new-todo-input-container">
+          <input id="todo-input" />
+          <button type="button" id="add-button">Add</button>
+        </div>
+
+        <div id="list-container" class="list-container">
+        </div>    
+      </main>
+    </div>
+
+  </div>
+  
+</body>

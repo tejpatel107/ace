@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+    <title>Task 11</title>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="index.css">
+
+</head> 
+<body>
+    <h1>Task 11</h1>
+    <h3>Basic calculator</h3>
+
+    <div id="main">
+
+        <div id="resultDisplay">
+            <textarea id="finalAnswer" placeholder="Result will be displayed here" readonly>0</textarea>
+            <input id="currentInputDisplay" placeholder="Current input will be displayed here" readonly>
+        </div>
+
+        <div id="buttonsDisplay" >
+
+            <div id="numbersDisplay">
+
+                <div id="clearDeleteButtons">
+                    <button id="clearBtn" onclick="clearAll()">AC</button>
+                    <button id="deleteBtn" onclick="deleteLastInput()">DEL</button>
+                    <button id="moduloBtn" class="operationsButton" onclick="selectOperator('%')">%</button>
+                </div>
+
+                <div id="numberButtons">
+                    <div id="row789">
+                        <button id="7" class = "numbers" onclick="selectNumber('7')">7</button>
+                        <button id="8" class = "numbers" onclick="selectNumber('8')">8</button>
+                        <button id="9" class = "numbers" onclick="selectNumber('9')">9</button>
+                    </div>
+                    <div id="row456">
+                        <button id="4" class = "numbers" onclick="selectNumber('4')">4</button>
+                        <button id="5" class = "numbers" onclick="selectNumber('5')">5</button>
+                        <button id="6" class = "numbers" onclick="selectNumber('6')">6</button>
+                    </div>
+                    <div id="row123">
+                        <button id="1" class = "numbers" onclick="selectNumber('1')">1</button>
+                        <button id="2" class = "numbers" onclick="selectNumber('2')">2</button>
+                        <button id="3" class = "numbers" onclick="selectNumber('3')">3</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="operationsDisplay">
+                <button id="addBtn" class="operations" onclick="selectOperator('+')">+</button>
+                <button id="subtractBtn" class="operations" onclick="selectOperator('-')">--</button>
+                <button id="multiplyBtn" class="operations" onclick="selectOperator('*')">x</button>
+                <button id="divideBtn" class="operations" onclick="selectOperator('/')">/</button>  
+            </div>
+        </div>
+        <div>
+            <button id="changeSignButton" class = "numbers" onclick="changeSignOfFinalAnswer()">+/-</button>
+            <button id="zeroButton" class = "numbers" onclick="selectNumber('0')">0</button>
+            <button id="decimalButton" class = "numbers" onclick="selectDecimalPoint()">.</button>
+            <button id="equalsNutton" class = "numbers" onclick="calculate()">=</button>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi-Step Form Validation</title>
+    <link rel="stylesheet" href="index.css" />
+    <script type="module" defer src="scripts/index.js"></script>
+  </head>
+
+  <body>
+    <div id="container">
+      <form id="form">
+        <h1>Register:</h1>
+
+        <div class="tab" id="step1" >
+          <p class="step-title">Basic Information</p>
+
+          <div class="field-group">
+            <!-- <span > -->
+            <label for="fname-input" class="input-fields-labels"
+              >First Name:
+            </label>
+            <input type="text" id="fname-input" class="input-fields" />
+            <!-- </span> -->
+            <p id="fnameError" class="error"></p>
+          </div>
+
+          <div class="field-group">
+            <label for="lname-input" class="input-fields-labels"
+              >Last Name:
+            </label>
+            <input type="text" id="lname-input" class="input-fields" />
+            <p id="lnameError" class="error"></p>
+          </div>
+
+          <div class="field-group gender-group">
+            <div id="gender-radio-buttons">
+              <span class="input-fields-labels">Gender:</span>
+
+              <label for="male">
+                <input type="radio" id="male" value="male" name="gender" />
+                Male
+              </label>
+
+              <label for="female">
+                <input type="radio" id="female" value="female" name="gender" />
+                Female
+              </label>
+            </div>
+
+            <p id="genderError" class="error"></p>
+          </div>
+        </div>
+
+        <div class="tab" id="step2" hidden>
+          <p class="step-title">Contact Details</p>
+
+          <div class="field-group" class="input-fields-labels">
+            <label for="email" class="input-fields-labels">Email: </label>
+            <input type="email" id="email" class="input-fields" />
+            <p id="emailError" class="error"></p>
+          </div>
+
+          <div class="field-group">
+            <label for="contact" class="input-fields-labels">Contact: </label>
+            <div class="phone-input">
+              <span class="country-code">+91</span>
+              <input type="tel" id="contact" name="contact" maxlength="10" />
+            </div>
+
+            <p id="contactError" class="error"></p>
+          </div>
+
+          <div class="field-group">
+            <label for="dob" class="input-fields-labels">Date of Birth: </label>
+            <input
+              type="text"
+              id="dob"
+              class="input-fields"
+              name="dob"
+              placeholder="MM/DD/YYYY"
+              maxlength="10"
+            />
+            <p id="dobError" class="error"></p>
+          </div>
+
+          <div class="field-group">
+            <label for="zip" class="input-fields-labels">Zip Code </label>
+            <input
+              type="text"
+              id="zip"
+              class="input-fields"
+              name="zip"
+              maxlength="6"
+            />
+            <p id="zipError" class="error"></p>
+          </div>
+
+          <div class="field-group">
+            <label for="ip-address" class="input-fields-labels"
+              >Ip Address
+            </label>
+            <input
+              type="text"
+              id="ip-address"
+              class="input-fields"
+              placeholder="XXX.XXX.XXX.XXX"
+              maxlength="15"
+            />
+            <p id="ipError" class="error"></p>
+          </div>
+        </div>
+
+        <div class="tab" id="step3" hidden>
+          <p class="step-title">Preferences &amp; Confirmation</p>
+
+          <div class="field-group">
+            <div id="sport-row">
+              <label for="sport-dropdown" class="input-fields-labels"
+                >Favorite Sport:
+              </label>
+              <select id="sport-dropdown">
+                <option value="" selected disabled>Select your sport</option>
+                <option value="Badminton">Badminton</option>
+                <option value="Cricket">Cricket</option>
+                <option value="Football">Football</option>
+                <option value="Pickleball">Pickleball</option>
+                <option value="Swimming">Swimming</option>
+                <option value="Table Tennis">Table Tennis</option>
+                <option value="Tennis">Tennis</option>
+                <option value="Squash">Squash</option>
+              </select>
+            </div>
+
+            <p id="sportError" class="error"></p>
+          </div>
+
+          <div class="field-group">
+            <label for="bio-row" class="input-fields-labels"
+              >About Yourself:
+            </label>
+            <div id="bio-row">
+              <textarea id="bio-textarea"></textarea>
+            </div>
+
+            <p id="bioError" class="error"></p>
+          </div>
+
+          <div class="field-group">
+            <label for="hours-input" class="input-fields-labels">Hours: </label>
+            <input type="text" id="hours-input" class="input-fields" />
+
+            <p id="hoursError" class="error"></p>
+          </div>
+
+          <div class="field-group">
+            <label for="money-input" class="input-fields-labels"
+              >Amount:
+            </label>
+            <input
+              type="text"
+              id="money-input"
+              class="input-fields"
+              placeholder="$$"
+            />
+            <p id="moneyError" class="error"></p>
+          </div>
+        </div>
+
+        <div class="tab" id="step4" hidden>
+          <p class="step-title">Review &amp; Confirmation</p>
+
+          <table id="summary-table">
+            <tbody>
+              <!-- Basic Information -->
+              <tr class="section-heading">
+                <th colspan="2">
+                  <span>Basic Information</span>
+                  <button
+                    type="button"
+                    class="edit-button"
+                    id="step1-edit-button"
+                    data-step="1"
+                  >
+                    Edit
+                  </button>
+                </th>
+              </tr>
+
+              <tr>
+                <td>First Name</td>
+                <td id="summary-fname"></td>
+              </tr>
+
+              <tr>
+                <td>Last Name</td>
+                <td id="summary-lname"></td>
+              </tr>
+
+              <tr>
+                <td>Gender</td>
+                <td id="summary-gender"></td>
+              </tr>
+
+              <!-- Contact Details -->
+              <tr class="section-heading">
+                <th colspan="2">
+                  <span>Contact Details</span>
+                  <button
+                    type="button"
+                    class="edit-button"
+                    id="step2-edit-button"
+                    data-step="2"
+                  >
+                    Edit
+                  </button>
+                </th>
+              </tr>
+
+              <tr>
+                <td>Email</td>
+                <td id="summary-email"></td>
+              </tr>
+
+              <tr>
+                <td>Contact Number</td>
+                <td id="summary-contact"></td>
+              </tr>
+
+              <tr>
+                <td>Date of Birth</td>
+                <td id="summary-dob"></td>
+              </tr>
+
+              <tr>
+                <td>ZIP Code</td>
+                <td id="summary-zip"></td>
+              </tr>
+
+              <tr>
+                <td>IP Address</td>
+                <td id="summary-ip"></td>
+              </tr>
+
+              <!-- Preferences & Confirmation -->
+              <tr class="section-heading">
+                <th colspan="2">
+                  <span>Preferences &amp; Confirmation</span>
+                  <button
+                    type="button"
+                    class="edit-button"
+                    id="step3-edit-button"
+                    data-step="3"
+                  >
+                    Edit
+                  </button>
+                </th>
+              </tr>
+
+              <tr>
+                <td>Favorite Sport</td>
+                <td id="summary-sport"></td>
+              </tr>
+
+              <tr>
+                <td>About Yourself</td>
+                <td id="summary-bio"></td>
+              </tr>
+
+              <tr>
+                <td>Hours</td>
+                <td id="summary-hours"></td>
+              </tr>
+
+              <tr>
+                <td>Money</td>
+                <td id="summary-money"></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="terms-condition">
+            <input type="checkbox" id="terms-condition" />
+            <label for="terms-condition">Terms &amp; Conditions</label>
+          </div>
+        </div>
+
+        <div id="previous-next-buttons">
+          <button type="button" id="previous-button" class="invisible">
+            Previous
+          </button>
+          <button type="submit" id="submit-button" class="invisible">
+            Submit
+          </button>
+          <button type="button" id="next-button">Next</button>
+        </div>
+      </form>
+    </div>
+    <div id="records-container" class="records-container" hidden>
+      <p class="step-title">Submitted Records</p>
+
+      <div class="table-wrapper">
+        <table id="records-table">
+          <thead>
+            <tr>
+              <th>Serial Number</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Gender</th>
+              <th>Email ID</th>
+              <th>Contact Number</th>
+              <th>Date of Birth</th>
+              <th>Favorite Sport</th>
+              <th>About</th>
+              <th>Hours</th>
+              <th>IP Address</th>
+              <th>ZIP Code</th>
+              <th>Money</th>
+              <th>Agreement Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody id="records-table-body">
+            <!-- Submitted records will be inserted here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

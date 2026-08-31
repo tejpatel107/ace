@@ -1,0 +1,43 @@
+<!doctype html>
+
+<head>
+  <title>To-Do Application</title>
+  <link href="index.css" rel="stylesheet">
+  </link>
+  <script type="module" defer src="index.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <main>
+
+    <div class="todo-list">
+      <header id="header" class="header">To-Do list</header>
+      <div id="workspace" class="workspace">
+
+        <div id="new-todo-input-container" class="new-todo-input-container">
+          
+          <div id="dropdown-container" class="dropdown-container">
+            <select data-level="0" id="root-dropdown">
+              <option data-option-list-id="0" data-option-level="0" value="0">Select</option>
+            </select>
+          </div>
+
+          <div id="edit-hierarchy-container" class="edit-hierarchy-container">
+          </div>
+
+          <div>
+            <input id="todo-input" />
+            <button type="button" id="add-button">Add</button>
+          </div>
+        </div>
+
+        <div id="list-container" class="list-container">
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+</body>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>Task 12</title>
+      <script src="index.js" defer></script>
+      <link rel="stylesheet" href="index.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    </head>
+
+    <body>
+      <h1 class="heading">Task 12</h1>
+      <h3 class="heading">Real Time form validation</h3>
+
+      <form onsubmit="onSubmit()">
+        <div id="fname">
+          <label for="fname" class="label" id="fname-label">First name</label><br>
+          <input
+            type="text"
+            class="input"
+            id="fname-input"
+            oninput="validateFirstName()"
+            placeholder="Enter first name"
+          />
+          <p name="fnameError" id="fnameError" class="error" type="error"></p>
+        </div>
+
+        <div id="lname">
+          <label for="lname" class="label" id="lname-label">Last name</label><br />
+          <input
+            type="text"
+            class="input"
+            id="lname-input"
+            oninput="validateLastName()"
+            placeholder="Enter last name"
+          />
+          <p id="lnameError" class="error" type="error"></p>
+        </div>
+
+        <div id="email">
+          <label for="email" class="label" id="email-label">Email</label><br />
+          <input
+            type="email"
+            class="input"
+            id="email-input"
+            oninput="validateEmail()"
+            placeholder="Enter email"
+          />
+          <p id="emailError" class="error" type="error"></p>
+        </div>
+
+        <div id="password">
+          <label for="password" id="password-label" class="label">Password</label><br />
+          <div id="password-container">
+            <input
+                type="password"
+                class="input"
+                id="password-input"
+                oninput="validatePassword()"
+                placeholder="Enter password"
+            />
+            <i
+                class="far fa-eye"
+                id="togglePassword"
+                onclick="togglePassword()"
+            ></i>
+          </div>
+          <p id="passwordError" class="error" type="error"></p>
+        </div>
+        
+        <hr>
+
+        <div id="submit">
+          <button type="submit" >Submit</button>
+        </div>
+      </form>
+    </body></html
+></DOCTYPE>

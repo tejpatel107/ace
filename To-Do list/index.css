@@ -1,0 +1,234 @@
+body {
+  font-size: xx-large;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 100dvh;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 15px;
+  background-color: rgb(252, 252, 125);
+
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Main workspace */
+main {
+  width: 1500px;
+  height: 100%;
+
+  background-color: white;
+
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+
+  gap: 15px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+  overflow: hidden;
+}
+
+/* =========================
+   Editing hierarchy
+   ========================= */
+
+.edit-hierarchy-container {
+  display: none;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.edit-hierarchy-container.visible {
+  display: flex;
+}
+
+/* Arrow between hierarchy items */
+
+.hierarchy-arrow {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+/* Hierarchy items */
+
+.hierarchy-item {
+  white-space: normal;
+  overflow-wrap: break-word;
+  line-height: 1.4;
+}
+
+/* =========================
+   Main To-Do content
+   ========================= */
+
+.todo-list {
+  flex: 1;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header */
+
+header {
+  width: 80%;
+
+  display: flex;
+  justify-content: center;
+
+  margin: 15px 0;
+}
+
+/* Main */
+
+.workspace {
+  border-top: 1px solid #e0e0e0;
+
+  width: 95%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding-top: 15px;
+}
+
+/* =========================
+   New Todo input
+   ========================= */
+
+.new-todo-input-container {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  gap: 8px;
+}
+
+/* Dropdown */
+
+.new-todo-input-container .dropdown-container {
+  width: 100%;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+}
+
+.new-todo-input-container .dropdown-container.hidden {
+  display: none;
+}
+
+.new-todo-input-container .dropdown-container select {
+  width: 150px;
+  height: 100%;
+
+  font-size: 20px;
+
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid black;
+}
+
+/* Input + button */
+
+.new-todo-input-container > div:last-child {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.new-todo-input-container #todo-input {
+  flex: 1;
+
+  min-width: 0;
+  height: 50px;
+
+  border: none;
+  border-bottom: 1px solid black;
+
+  box-sizing: border-box;
+}
+
+.new-todo-input-container #add-button {
+  width: 80px;
+  height: 54px;
+
+  flex-shrink: 0;
+
+  text-align: center;
+
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+/* =========================
+   List
+   ========================= */
+
+.list-container {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 15px;
+
+  overflow-y: scroll;
+}
+
+.list-item {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  margin-top: 15px;
+}
+
+.list-item-shadow {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+  border-radius: 15px;
+}
+
+.list-title-container {
+  display: flex;
+  justify-content: center;
+
+  gap: 8px;
+}
+
+.sub-list-container {
+  position: relative;
+  left: 20px;
+}
