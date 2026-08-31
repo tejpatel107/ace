@@ -1,0 +1,25 @@
+body {
+  background: #111;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: Arial, sans-serif;
+}
+
+.grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 60px);
+  grid-template-rows: repeat(3, 60px);
+
+  gap: 5px;
+}
+
+.cell {
+  border: 1px solid #555;
+
+  cursor: pointer;
+}
