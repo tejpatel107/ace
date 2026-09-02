@@ -5,7 +5,7 @@
   "type": "module",
   "main": " server/server.js",
   "scripts": {
-    "start": "nodemon server/server.js",
+    "start": "npx tsc && node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "tej patel",
@@ -13,5 +13,11 @@
   "dependencies": {
     "express": "^5.2.1",
     "ws": "^8.21.3"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.4.0",
+    "@types/ws": "^8.18.1",
+    "typescript": "^7.0.2"
   }
 }
